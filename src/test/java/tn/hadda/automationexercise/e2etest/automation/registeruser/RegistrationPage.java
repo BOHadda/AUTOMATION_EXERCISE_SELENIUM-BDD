@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.Select;
 
+import tn.hadda.automationexercise.e2etest.automation.utils.CommonMethods;
 import tn.hadda.automationexercise.e2etest.automation.utils.Setup;
 import tn.hadda.automationexercise.e2etest.automation.utils.WaitMethods;
 
@@ -174,7 +175,7 @@ public class RegistrationPage {
 	}
 
 	public void fillPassword(String pwd) {
-
+		CommonMethods.scrollVisibilityElement(driver, password);
 		waitMethod.explicitWaitUntilVisibilityOfWEId(driver, PASSWORD, 5);
 		password.sendKeys(pwd);
 	}

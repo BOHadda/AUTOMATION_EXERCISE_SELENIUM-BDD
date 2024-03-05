@@ -20,7 +20,7 @@ public class ChromeDriverManager extends DriverManager {
 	}
 	@Override
 	public void createDriver() {
-		 System.setProperty("webdriver.chrome.driver","D:\\TEST_AUTO_SELENIUM_GIT\\ProjectWithFrameworkSeleniumBDD\\src\\test\\ressources\\drivers\\chromedriver.exe");
+		 System.setProperty("webdriver.chrome.driver","C:\\Users\\zaine\\git\\AUTOMATION_EXERCISE_SELENIUM-BDD\\src\\test\\ressources\\drivers\\chromedriver.exe");
          ChromeOptions optionsChrome = new ChromeOptions();
          optionsChrome.addArguments("--start-maximized");
          optionsChrome.addArguments("--disable-infobars");
