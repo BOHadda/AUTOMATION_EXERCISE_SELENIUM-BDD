@@ -11,7 +11,7 @@ Feature: Register User
   @validregister
   Scenario: [TC1] Register user with valid contact details
     When I enter name "Hadda"
-    And I enter email address "bouchagraouihadda6@gmail.com"
+    And I enter email address "bouchagraouihadda+20@gmail.com"
     And I click Signup button
     And I verify that 'ENTER ACCOUNT INFORMATION' is visible
     And I check the title "Mrs"
@@ -34,7 +34,7 @@ Feature: Register User
     And I click Create Account button
     Then A message 'ACCOUNT CREATED!' is visible
     When I click Continue button
-    Then 'Logged in as Hadda' is visible
+    Then "Logged in as Hadda" is visible
 
   @invalidregister
   Scenario: [TC2] Register user with existing email

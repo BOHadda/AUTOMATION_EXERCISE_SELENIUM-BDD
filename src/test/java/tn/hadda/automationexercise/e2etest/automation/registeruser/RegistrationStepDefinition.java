@@ -147,7 +147,7 @@ public class RegistrationStepDefinition extends CommonMethods {
 
 	@Then("{string} is visible")
 	public void isVisible(String logMsg) {
-		String loggedMsg = registrationPage.getAccountText();
+		String loggedMsg = registrationPage.getLoggedText();
 		System.out.println("The message of create account is : " + loggedMsg);
 		Assert.assertTrue(logMsg.contains(loggedMsg));
 	}

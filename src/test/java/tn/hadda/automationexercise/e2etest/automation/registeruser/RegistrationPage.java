@@ -2,6 +2,7 @@ package tn.hadda.automationexercise.e2etest.automation.registeruser;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.Select;
@@ -35,11 +36,11 @@ public class RegistrationPage {
 	final static String CITY = "city";
 	final static String ZIP_CODE = "zipcode";
 	final static String MOBILE_NUMBER = "mobile_number";
-	final static String CREATE_ACCOUNT_BUTTON = "//button[contains(@data-qa,'create-account')]";
-	final static String MSG_CREATE_ACCOUNT = "//b[contains(text(),'Account Created!')]";
+	final static String CREATE_ACCOUNT_BUTTON = "[data-qa='create-account']";
+	final static String MSG_CREATE_ACCOUNT = "[data-qa=\"account-created\"]";
 	final static String CONTINUE_BUTTON = "//a[contains(@data-qa,'continue-button')]";
-	final static String ANNONCE ="//svg[@fill='#5F6368']";
-	final static String MSG_LOGGED = "//b[contains(text(),'Hadda')]";
+	final static String ANNONCE ="dismiss-button";
+	final static String MSG_LOGGED = "Logged in";
 	final static String ERROR_MSG_EXIST_MAIL = "//p[contains(text(),'Email Address already exist!')]";
 	//a[contains(@class,'fa fa-user')]
 	
@@ -113,19 +114,19 @@ public class RegistrationPage {
 	@FindBy(how = How.ID, using = MOBILE_NUMBER)
 	public static WebElement mobileNumber;
 
-	@FindBy(how = How.XPATH, using = CREATE_ACCOUNT_BUTTON)
+	@FindBy(how = How.CSS, using = CREATE_ACCOUNT_BUTTON)
 	public static WebElement createAccountBtn;
 
-	@FindBy(how = How.XPATH, using = MSG_CREATE_ACCOUNT)
+	@FindBy(how = How.CSS, using = MSG_CREATE_ACCOUNT)
 	public static WebElement msgCreateAccount;
 
 	@FindBy(how = How.XPATH, using = CONTINUE_BUTTON)
 	public static WebElement continueBtn;
 	
-	@FindBy(how = How.XPATH, using = ANNONCE)
+	@FindBy(how = How.ID, using = ANNONCE)
 	public static WebElement annonce;
 
-	@FindBy(how = How.XPATH, using = MSG_LOGGED)
+	@FindBy(how = How.PARTIAL_LINK_TEXT, using = MSG_LOGGED)
 	public static WebElement msgLogged;
 	
 	@FindBy(how = How.XPATH, using = ERROR_MSG_EXIST_MAIL)
@@ -246,19 +247,18 @@ public class RegistrationPage {
 	}
 
 	public String getAccountText() {
-		waitMethod.explicitWaitUntilVisibilityOfWEXpath(driver, MSG_CREATE_ACCOUNT, 15);
+		waitMethod.explicitWaitUntilVisibilityOfWECss(driver, MSG_CREATE_ACCOUNT, 15);
 		return msgCreateAccount.getText();
 	}
 
 	public void clickContinueButton() {
 		waitMethod.explicitWaitUntilVisibilityOfWEXpath(driver, CONTINUE_BUTTON, 5);
 		continueBtn.click();
-		//annonce.click();
 
 	}
 
 	public String getLoggedText() {
-		waitMethod.explicitWaitUntilVisibilityOfWEXpath(driver, MSG_LOGGED, 10);
+		//waitMethod.explicitWaitUntilVisibilityOfWEXpath(driver, MSG_LOGGED, 10);
 		return msgLogged.getText();
 	}
 	

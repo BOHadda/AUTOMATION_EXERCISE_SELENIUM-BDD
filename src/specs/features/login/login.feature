@@ -10,12 +10,12 @@ Feature: Login User
 
   @validlogin
   Scenario: [TC1] Login user with correct email and password
-    When I enter correct email address "bouchagraouihadda5@gmail.com"
-    And I enter the valid password "rima2024"
+    When I enter correct email address "zaineb.sammoud@gmail.com"
+    And I enter the valid password "formation2023"
     And I click login button
-    # Then I verify that 'Logged in as username' is visible
-    When I click Delete Account button
-    Then I verify that the message of delete 'ACCOUNT DELETED!' is visible
+    Then I verify that 'Logged in as username' is visible
+    #When I click Delete Account button
+    #Then I verify that the message of delete 'ACCOUNT DELETED!' is visible
 
   @invalidlogin
   Scenario: [TC2] Login user with incorrect email and password
