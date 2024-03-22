@@ -140,8 +140,8 @@ public class RegistrationPage {
 	/* Methods */
 	public boolean verifyHomePageIsVisible() {
 		waitMethod.implicitWait(driver, 5);
-		return driver.getCurrentUrl().equals("url");
-		// return driver.getCurrentUrl();
+		System.out.println(driver.getCurrentUrl());
+		return driver.getCurrentUrl().equals("https://automationexercise.com/");
 	}
 
 	public void clickSignupLogin() {

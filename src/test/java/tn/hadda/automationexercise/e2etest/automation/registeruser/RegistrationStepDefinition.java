@@ -37,7 +37,7 @@ public class RegistrationStepDefinition extends CommonMethods {
 		boolean currentURL = registrationPage.verifyHomePageIsVisible();
 		// String currentURL= registrationPage.verifyHomePageIsVisible();
 		System.out.println("Current link is : " + currentURL);
-		// Assert.assertTrue(currentURL.contains("url"));
+		Assert.assertTrue(currentURL);
 	}
 
 	@Given("I click on Signup \\/ Login button")
